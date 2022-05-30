@@ -17,7 +17,7 @@ document.addEventListener(
           );
           outputArea.value = formatted;
         } catch (e) {
-          alert(e.message);
+          outputArea.value = e.message;
         }
       }
     });
@@ -31,7 +31,7 @@ btnFormat.addEventListener("click", () => {
       const formatted = JSON.stringify(JSON.parse(inputArea.value), null, 4);
       outputArea.value = formatted;
     } catch (e) {
-      alert(e.message);
+      outputArea.value = e.message;
     }
   }
 });
@@ -42,7 +42,8 @@ btnMinify.addEventListener("click", () => {
       const minified = JSON.stringify(JSON.parse(inputArea.value));
       outputArea.value = minified;
     } catch (e) {
-      alert(e.message);
+      outputArea.value = e.message;
     }
   }
 });
+
