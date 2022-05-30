@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  background: #dddddd;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 20px;
+  gap: 20px;
+}
+
+.textareaclass {
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #110303;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  resize: none;
+  font-family: monospace;
+  transition: background 0.25s, color 0.25s;
+}
+
+
+
+
+.buttonclass {
+  padding: 8px 14px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #679cff;
+  color: #ffffff;
+  font-weight: bold;
+ 
+}
+
