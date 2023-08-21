@@ -2,6 +2,7 @@ const inputArea = document.querySelector("#inputtextarea");
 const outputArea = document.querySelector("#outputtextarea");
 const btnFormat = document.querySelector("#formatbutton");
 const btnMinify = document.querySelector("#minifybutton");
+const btnAdvanced = document.querySelector("#advancedbutton");
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -41,6 +42,17 @@ btnMinify.addEventListener("click", () => {
     try {
       const minified = JSON.stringify(JSON.parse(inputArea.value));
       outputArea.value = minified;
+    } catch (e) {
+      outputArea.value = e.message;
+    }
+  }
+});
+
+btnAdvanced.addEventListener("click", () => {
+  if (inputArea.value != "") {
+    try {
+      chrome.tabs.create({'url': 'readonly.html?data='+inputArea.value}, function(window) {
+      });
     } catch (e) {
       outputArea.value = e.message;
     }
