@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>jsonTreeViewer</title>
+    <title>Advanced JSON Formatter</title>
     <meta charset="utf-8" />
     
     <link href="libs/app/reset.css" rel="stylesheet" />
@@ -9,7 +9,7 @@
     <link href="libs/jsonTree/jsonTree.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
     
-    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="shortcut icon" href="icon128.png" />
     <!--
         JSON Tree Viewer
         http://github.com/summerstyle/jsonTreeViewer
@@ -42,9 +42,6 @@
                 </li>
                 <li data-action="collapse" class="menu__item">
                     <span class="menu__item-name">collapse all</span>
-                </li>
-                <li data-action="collapse" class="menu__item">
-                    <span class="menu__item-name" id = "shownewline">Show Newline</span>
                 </li>
                 <!-- <li data-action="find_and_mark" class="menu__item">
                     <span class="menu__item-name">find and mark</span>
@@ -198,10 +195,10 @@
     <script src="libs/app/App.js"></script>
     <script src="libs/jsonTree/jsonTree.js"></script>
     <script src="jsonTreeViewer.js"></script>
-    <script>
+    <!-- <script>
         var example = '{}';
 
         jsonTreeViewer.parse(example);
-    </script>
+    </script> -->
 </body>
 </html>

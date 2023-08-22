@@ -2,7 +2,7 @@ const inputArea = document.querySelector("#inputtextarea");
 const outputArea = document.querySelector("#outputtextarea");
 const btnFormat = document.querySelector("#formatbutton");
 const btnMinify = document.querySelector("#minifybutton");
-const btnAdvanced = document.querySelector("#advancedbutton");
+//const btnAdvanced = document.querySelector("#advancedbutton");
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -48,14 +48,14 @@ btnMinify.addEventListener("click", () => {
   }
 });
 
-btnAdvanced.addEventListener("click", () => {
-  if (inputArea.value != "") {
-    try {
-      chrome.tabs.create({'url': 'readonly.html?data='+inputArea.value}, function(window) {
-      });
-    } catch (e) {
-      outputArea.value = e.message;
-    }
-  }
-});
+// btnAdvanced.addEventListener("click", () => {
+//   if (inputArea.value != "") {
+//     try {
+//       chrome.tabs.create({'url': 'readonly.html'}, function(window) {
+//       });
+//     } catch (e) {
+//       outputArea.value = e.message;
+//     }
+//   }
+// });
 

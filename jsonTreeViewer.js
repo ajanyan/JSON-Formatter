@@ -8,21 +8,24 @@
 
 'use strict';
 var  formatted;
-const shownewline = document.getElementById("shownewline");
+//const shownewline = document.getElementById("shownewline");
 document.addEventListener(
     "DOMContentLoaded",
     function () {
       chrome.runtime.sendMessage({ message: "jsonData" }, function (response) {
         if (response.data != undefined && response.data != "") {
-         
-             formatted = JSON.stringify(
-              JSON.parse(response.data),
-              null,
-              4
-            );
-           
-            jsonTreeViewer.parse(formatted);
-          
+            try{
+                    formatted = JSON.stringify(
+                    JSON.parse(response.data),
+                    null,
+                    4
+                );
+                
+                jsonTreeViewer.parse(formatted.replaceAll("\\n","<br>"));
+            }
+            catch(e){
+                alert(e.message);
+            }
         }
       });
     },
@@ -30,9 +33,9 @@ document.addEventListener(
   );
 
   
-  shownewline.addEventListener("click", () => {
-    jsonTreeViewer.parse(formatted.replaceAll("\\n","<br>"));
-  });
+//   shownewline.addEventListener("click", () => {
+//     jsonTreeViewer.parse(formatted.replaceAll("\\n","<br>"));
+//   });
 
 var jsonTreeViewer = (function() {
 

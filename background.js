@@ -13,29 +13,29 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
 
     if (request.message == "jsonData"){
-      jsonData1 = jsonData != null ? jsonData:jsonData1
-      sendResponse({data: jsonData,data1:jsonData1});
-      
+      sendResponse({data: jsonData});
       jsonData = ""
     }
       
   }
 );
 
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.contextMenus.create({
+      id:"formatJSON",
+      title: "Format JSON",
+      contexts:["selection"],  // ContextType
 
-chrome.contextMenus.create({
-  id:"formatJSON",
-  title: "Format JSON",
-  contexts:["selection"],  // ContextType
+    });
 
- });
+    chrome.contextMenus.create({
+      id:"beautifyJSON",
+      title: "Format JSON Advanced (Read Only)",
+      contexts:["selection"],  // ContextType
 
- chrome.contextMenus.create({
-  id:"beautifyJSON",
-  title: "Format JSON Advanced (Read Only)",
-  contexts:["selection"],  // ContextType
+    });
 
- });
+});
 
  chrome.contextMenus.onClicked.addListener(function(info, tab) {
   if (info.menuItemId == "formatJSON") {
